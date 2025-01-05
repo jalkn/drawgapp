@@ -71,27 +71,36 @@
             border-radius: 5px;
             background-color: #fff;
         }
+
+        .replay-button {
+            position: absolute;
+            bottom: 20px; /* Adjust as needed */
+            left: 50%;
+            transform: translateX(-50%); /* Center horizontally */
+            background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white */
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 2; /* Ensure it's above the video */
+        }
+
     </style>
 </head>
 <body>
     <div id="container">
         <div>
             <div class="menu">
-                <a href="#Norst">Nordeste</a>
-                <!--
-                <a href="#waimangu">Waimangu</a>
-                <a href="#fiorland">Fiorland</a>
-                -->
+                <a href="#Norst">La Cruzada</a>
             </div>
         </div>
 
-
         <div class="itemCarrusel" id="Norst">
             <div class="tarjetaCarrusel">
-                <video autoplay muted loop>
-                    <source src="./src/norstHD.mp4" type="video/mp4"> 
+                <video id="norstVideo" autoplay muted loop> 
+                    <source src="./src/norstHD.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
+                 <div class="replay-button" onclick="replayVideo('norstVideo')">Replay</div>
             </div>
             <div class="flechasCarrusel">
                 <a href="#fiorland"><i class="fa fa-chevron-left"></i></a>
@@ -100,6 +109,17 @@
             </div>
         </div>
 
+    </div>
+
+    <script>
+        function replayVideo(videoId) {
+            const video = document.getElementById(videoId);
+            video.currentTime = 0; // Reset to the beginning
+            video.play();
+        }
+    </script>
+</body>
+</html>
         <!--
         <div class="itemCarrusel" id="waimangu">
             <div class="tarjetaCarrusel">
@@ -129,6 +149,3 @@
             </div>
         </div>
         -->
-    </div>
-</body>
-</html>
