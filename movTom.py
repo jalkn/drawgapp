@@ -19,6 +19,6 @@ def convert_mov_to_mp4_subprocess(mov_path, mp4_path):
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
 
-mov_file = "../src/norst.mov"
-mp4_file = "../src/norst.mp4"
+mov_file = "../src/kiwiTrail.mov"
+mp4_file = "../src/kiwiTrail4K.mp4"
 convert_mov_to_mp4_subprocess(mov_file, mp4_file)
